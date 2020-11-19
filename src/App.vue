@@ -10,7 +10,7 @@ import mymap from 'components/Map.vue'
 
 export default {
   name: 'App',
-  Components: {
+  components: {
     mymap,
   },
 }
