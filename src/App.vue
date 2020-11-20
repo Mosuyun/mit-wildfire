@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <mymap>HelloWorld</mymap>
+    <mymap />
   </div>
 </template>
 
