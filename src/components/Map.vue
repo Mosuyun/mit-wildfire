@@ -5,12 +5,11 @@
         <vue-slider
           id="slider"
           v-model="value"
-          :data="date"
+          :v-data="date"
           :absorb="true"
           :tooltip="'always'"
           :use-keyboard="true"
-          :marks="true"
-          :enable-cross="false"
+          :marks="marks"
           style="width: 80vw"
           @drag-end="filter(value)"
         >
@@ -35,22 +34,24 @@ export default {
   components: {
     VueSlider,
   },
-  data() {
+  data: function () {
     return {
       map: null,
       value: '2020-09-01',
-      /*marks: {
+      marks: {
         '2020-09-01': '2020-09-01',
         '2020-10-01': '2020-10-01',
-      },*/
+      },
       date: [],
       interval: null,
       intervalState: false,
     }
   },
+  beforeMount() {
+    this.initDate()
+  },
   mounted() {
     this.initMap()
-    this.initDate()
   },
   methods: {
     initMap: function () {
@@ -296,6 +297,7 @@ export default {
       })
     },
     initDate: function () {
+      console.log(typeof this.date)
       var dateList = []
       var j, tempDate
       // 2020.9
@@ -308,6 +310,7 @@ export default {
         dateList.push(tempDate)
       }
       dateList.push('2020-10-01')
+      console.log(typeof this.date)
       this.date = dateList
       console.log('datelist:')
       console.log(this.date)
