@@ -37,10 +37,10 @@ export default {
   data: function () {
     return {
       map: null,
-      value: '2020-09-01',
+      value: '2020-07-31',
       marks: {
-        '2020-09-01': '2020-09-01',
-        '2020-10-01': '2020-10-01',
+        '2020-07-31': '2020-07-31',
+        '2020-11-10': '2020-11-10',
       },
       date: [],
       interval: null,
@@ -60,8 +60,8 @@ export default {
       this.map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',
-        center: [-119.32302, 37.40631],
-        zoom: 5.82,
+        center: [117.97017, -2.49417],
+        zoom: 4.87,
       })
       this.nav = new mapboxgl.NavigationControl()
       this.map.addControl(this.nav)
@@ -92,8 +92,24 @@ export default {
         // 加载火点图和热力图
         var j, tempDate, sourseName, data, layerHeat, layerPoint, fireSourse
         var map = this.map
+        for (j = 1; j < 98; j++) {
+          tempDate = this.date[j]
+          layerHeat = 'fireMap' + tempDate
+          layerPoint = 'firePoint' + tempDate
+          sourseName = 'wildfires' + tempDate
+          fireSourse = 'firepoints' + tempDate
+          data = './data/' + tempDate + '.geojson'
+          this.$options.methods.buildFireMap(
+            sourseName,
+            data,
+            layerHeat,
+            layerPoint,
+            fireSourse,
+            map
+          )
+        }
         // 2020.9
-        for (j = 1; j < 10; j++) {
+        /*for (j = 1; j < 10; j++) {
           tempDate = '2020-09-0' + j
           layerHeat = 'fireMap' + tempDate
           layerPoint = 'firePoint' + tempDate
@@ -143,7 +159,7 @@ export default {
           layerPoint,
           fireSourse,
           map
-        )
+        )*/
         alert('loaded')
       })
     },
@@ -155,6 +171,7 @@ export default {
       fireSourse,
       map
     ) {
+      console.log('buildmap' + sourseName)
       map.addSource(sourseName, {
         type: 'geojson',
         data: data,
@@ -298,19 +315,118 @@ export default {
     },
     initDate: function () {
       console.log(typeof this.date)
-      var dateList = []
-      var j, tempDate
+      var dateList = [
+        '2020-07-31',
+        '2020-08-01',
+        '2020-08-02',
+        '2020-08-03',
+        '2020-08-04',
+        '2020-08-05',
+        '2020-08-06',
+        '2020-08-07',
+        '2020-08-08',
+        '2020-08-09',
+        '2020-08-10',
+        '2020-08-11',
+        '2020-08-12',
+        '2020-08-13',
+        '2020-08-14',
+        '2020-08-15',
+        '2020-08-16',
+        '2020-08-17',
+        '2020-08-18',
+        '2020-08-19',
+        '2020-08-20',
+        '2020-08-21',
+        '2020-08-22',
+        '2020-08-23',
+        '2020-08-24',
+        '2020-08-25',
+        '2020-08-28',
+        '2020-08-29',
+        '2020-08-30',
+        '2020-08-31',
+        '2020-09-01',
+        '2020-09-02',
+        '2020-09-03',
+        '2020-09-04',
+        '2020-09-05',
+        '2020-09-06',
+        '2020-09-07',
+        '2020-09-08',
+        '2020-09-09',
+        '2020-09-10',
+        '2020-09-11',
+        '2020-09-12',
+        '2020-09-13',
+        '2020-09-14',
+        '2020-09-15',
+        '2020-09-16',
+        '2020-09-17',
+        '2020-09-18',
+        '2020-09-19',
+        '2020-09-20',
+        '2020-09-21',
+        '2020-09-22',
+        '2020-09-23',
+        '2020-09-24',
+        '2020-09-25',
+        '2020-09-26',
+        '2020-09-27',
+        '2020-09-28',
+        '2020-09-29',
+        '2020-09-30',
+        '2020-10-01',
+        '2020-10-02',
+        '2020-10-03',
+        '2020-10-04',
+        '2020-10-05',
+        '2020-10-06',
+        '2020-10-07',
+        '2020-10-08',
+        '2020-10-09',
+        '2020-10-10',
+        '2020-10-11',
+        '2020-10-12',
+        '2020-10-13',
+        '2020-10-14',
+        '2020-10-15',
+        '2020-10-16',
+        '2020-10-17',
+        '2020-10-18',
+        '2020-10-19',
+        '2020-10-20',
+        '2020-10-21',
+        '2020-10-22',
+        '2020-10-23',
+        '2020-10-24',
+        '2020-10-25',
+        '2020-10-27',
+        '2020-10-28',
+        '2020-10-29',
+        '2020-10-30',
+        '2020-11-01',
+        '2020-11-03',
+        '2020-11-04',
+        '2020-11-05',
+        '2020-11-06',
+        '2020-11-07',
+        '2020-11-08',
+        '2020-11-09',
+        '2020-11-10',
+      ]
+      //var j, tempDate
       // 2020.9
-      for (j = 1; j < 10; j++) {
+      /*for (j = 1; j < 10; j++) {
         tempDate = '2020-09-0' + j
         dateList.push(tempDate)
       }
       for (j = 10; j < 31; j++) {
-        tempDate = '2019-09-' + j
+        tempDate = '2020-09-' + j
         dateList.push(tempDate)
       }
       dateList.push('2020-10-01')
-      console.log(typeof this.date)
+      console.log(typeof this.date)*/
       this.date = dateList
       console.log('datelist:')
       console.log(this.date)

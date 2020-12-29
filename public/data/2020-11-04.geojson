@@ -1,0 +1,105 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "351.18",
+        "scan": "0.42",
+        "track": "0.45",
+        "acq_date": "04/11/2019",
+        "acq_time": "453",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "303.34",
+        "frp": "101.61",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.964149,
+          -10.175347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "367",
+        "scan": "0.42",
+        "track": "0.45",
+        "acq_date": "04/11/2019",
+        "acq_time": "453",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "l",
+        "version": "1",
+        "bright_ti5": "331.73",
+        "frp": "101.61",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.967812,
+          -10.174836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "347.2",
+        "scan": "0.57",
+        "track": "0.43",
+        "acq_date": "04/11/2019",
+        "acq_time": "453",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "312.11",
+        "frp": "86.93",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          124.521179,
+          -9.406774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "346.03",
+        "scan": "0.43",
+        "track": "0.46",
+        "acq_date": "04/11/2019",
+        "acq_time": "453",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "302.49",
+        "frp": "81.54",
+        "daynight": "D",
+        "type": "3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.677841,
+          -9.759824
+        ]
+      }
+    }
+  ]
+}

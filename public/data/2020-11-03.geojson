@@ -1,0 +1,105 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "367",
+        "scan": "0.51",
+        "track": "0.66",
+        "acq_date": "03/11/2019",
+        "acq_time": "514",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "h",
+        "version": "1",
+        "bright_ti5": "295.43",
+        "frp": "140.84",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.991997,
+          -3.367609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "341.97",
+        "scan": "0.56",
+        "track": "0.51",
+        "acq_date": "03/11/2019",
+        "acq_time": "514",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "294.72",
+        "frp": "110",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.888901,
+          -3.562744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "333.36",
+        "scan": "0.56",
+        "track": "0.51",
+        "acq_date": "03/11/2019",
+        "acq_time": "514",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "294.82",
+        "frp": "110",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.883148,
+          -3.558712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "343.62",
+        "scan": "0.55",
+        "track": "0.51",
+        "acq_date": "03/11/2019",
+        "acq_time": "514",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "297.14",
+        "frp": "74.93",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.940712,
+          -3.0527
+        ]
+      }
+    }
+  ]
+}

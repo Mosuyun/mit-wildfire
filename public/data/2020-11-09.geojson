@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "335.86",
+        "scan": "0.55",
+        "track": "0.43",
+        "acq_date": "09/11/2019",
+        "acq_time": "642",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "298.76",
+        "frp": "160.88",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.640846,
+          -3.454496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "344.45",
+        "scan": "0.56",
+        "track": "0.43",
+        "acq_date": "09/11/2019",
+        "acq_time": "642",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "296.01",
+        "frp": "125.78",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.824371,
+          -3.822045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "342.07",
+        "scan": "0.54",
+        "track": "0.42",
+        "acq_date": "09/11/2019",
+        "acq_time": "642",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "308.71",
+        "frp": "123.38",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.856636,
+          -4.915618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "353.95",
+        "scan": "0.54",
+        "track": "0.42",
+        "acq_date": "09/11/2019",
+        "acq_time": "642",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "303.92",
+        "frp": "101.53",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.636269,
+          -4.490752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "339.84",
+        "scan": "0.54",
+        "track": "0.42",
+        "acq_date": "09/11/2019",
+        "acq_time": "642",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "300.05",
+        "frp": "101.53",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.641106,
+          -4.489989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "367",
+        "scan": "0.34",
+        "track": "0.56",
+        "acq_date": "09/11/2019",
+        "acq_time": "500",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "h",
+        "version": "1",
+        "bright_ti5": "292.72",
+        "frp": "99.42",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.838013,
+          -8.31689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "351.83",
+        "scan": "0.57",
+        "track": "0.43",
+        "acq_date": "09/11/2019",
+        "acq_time": "642",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "305.87",
+        "frp": "94.16",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.771164,
+          -3.378276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "344.74",
+        "scan": "0.53",
+        "track": "0.42",
+        "acq_date": "09/11/2019",
+        "acq_time": "642",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "version": "1",
+        "bright_ti5": "303.57",
+        "frp": "77.9",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.657532,
+          -5.011434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bright_ti4": "367",
+        "scan": "0.34",
+        "track": "0.56",
+        "acq_date": "09/11/2019",
+        "acq_time": "500",
+        "satellite": "N",
+        "instrument": "VIIRS",
+        "confidence": "h",
+        "version": "1",
+        "bright_ti5": "296.96",
+        "frp": "75.29",
+        "daynight": "D",
+        "type": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.843994,
+          -8.316109
+        ]
+      }
+    }
+  ]
+}
