@@ -9,6 +9,7 @@ module.exports = {
     //     hotOnly: false,
     //     disabledHostCheck: true
     // },
+    publicPath: '/mit-wildfire/',
     configureWebpack: {
         resolve: {
             alias: {
