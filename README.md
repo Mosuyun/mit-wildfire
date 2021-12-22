@@ -1,4 +1,4 @@
-# mit-wildfire
+# Indonesia-wildfire
 
 ## Project setup
 ```

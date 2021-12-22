@@ -1,5 +1,5 @@
 {
-  "name": "mit-wildfire",
+  "name": "Indonesia-wildfire",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,23 @@
     "commit": "git-cz"
   },
   "dependencies": {
-    "commitizen": "^4.2.2",
+    "@ant-design/icons-vue": "^6.0.1",
+    "commitizen": "^4.2.4",
     "core-js": "^3.6.5",
+    "google-trends-api": "^4.9.2",
     "mapbox-gl": "^1.12.0",
     "node-sass": "^5.0.0",
     "sass": "^1.29.0",
-    "vue": "^3.0.0",
+    "vue": "^3.2.26",
+    "vue-router": "^4.0.0-0",
     "vue-slider-component": "^4.0.0-beta.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "^4.5.15",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.26",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.0.1",
     "eslint": "^6.8.0",
@@ -29,7 +33,7 @@
     "eslint-plugin-standard": "^4.1.0",
     "eslint-plugin-vue": "^7.0.0-0",
     "json-loader": "^0.5.7",
-    "sass-loader": "^10.1.0"
+    "sass-loader": "^10.1.1"
   },
   "eslintConfig": {
     "root": true,

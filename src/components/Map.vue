@@ -10,13 +10,26 @@
           :tooltip="'always'"
           :use-keyboard="true"
           :marks="marks"
-          style="width: 80vw"
+          style="width: 80vw; z-index: 100"
           @drag-end="filter(value)"
         >
           <template #dot>
             <img :src="'./fire.png'" class="custom-dot" style="width: 25px" />
           </template>
         </vue-slider>
+      </div>
+      <div class="icons-list">
+        <left-circle-two-tone style="margin-right: 15px" @click="OpenAll()" />
+        <play-circle-two-tone
+          v-if="!intervalState"
+          style="margin-right: 15px"
+          @click="Play()"
+        />
+        <pause-circle-two-tone
+          v-if="intervalState"
+          style="margin-right: 15px"
+          @click="Pause()"
+        />
       </div>
     </div>
   </div>
@@ -25,6 +38,13 @@
 <script>
 import mapboxgl from 'mapbox-gl'
 import VueSlider from 'vue-slider-component'
+import '@/assets/css/fire.css'
+
+import {
+  PlayCircleTwoTone,
+  PauseCircleTwoTone,
+  LeftCircleTwoTone,
+} from '@ant-design/icons-vue'
 
 const mapboxToken =
   'pk.eyJ1IjoibW9zdXl1biIsImEiOiJjazMxYnZ5Y3UwN201M2RvazN3OXI2MWU0In0.ZF9801IzUETje05jGnrE7w'
@@ -33,6 +53,9 @@ export default {
   name: 'Map',
   components: {
     VueSlider,
+    PlayCircleTwoTone,
+    PauseCircleTwoTone,
+    LeftCircleTwoTone,
   },
   data: function () {
     return {
@@ -92,7 +115,7 @@ export default {
         // 加载火点图和热力图
         var j, tempDate, sourseName, data, layerHeat, layerPoint, fireSourse
         var map = this.map
-        for (j = 1; j < 98; j++) {
+        for (j = 0; j < 98; j++) {
           tempDate = this.date[j]
           layerHeat = 'fireMap' + tempDate
           layerPoint = 'firePoint' + tempDate
@@ -267,7 +290,7 @@ export default {
       )
 
       // 悬浮显示信息窗
-      var popupTime = new mapboxgl.Popup({
+      var popup = new mapboxgl.Popup({
         closeButton: false,
         closeOnClick: false,
       })
@@ -284,8 +307,8 @@ export default {
 
         var coordinates = e.features[0].geometry.coordinates.slice()
         var description =
-          'Brightness: ' +
-          e.features[0].properties.brightness +
+          'FRP: ' +
+          e.features[0].properties.frp +
           '</br>' +
           /* 'Date: ' +
           e.features[0].properties.acq_date +
@@ -303,14 +326,17 @@ export default {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360
         }
 
+        console.log(coordinates)
+
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popupTime.setLngLat(coordinates).setHTML(description).addTo(map)
+        popup.setLngLat(coordinates).setHTML(description).addTo(map)
+        console.log(popup.isOpen())
       })
 
       map.on('mouseleave', layerPoint, () => {
         map.getCanvas().style.cursor = ''
-        popupTime.remove()
+        popup.remove()
       })
     },
     initDate: function () {
@@ -449,6 +475,62 @@ export default {
       this.map.setLayoutProperty(layerHeat, 'visibility', 'visible')
       console.log(layerHeat)
     },
+    Play: function () {
+      var layerPoint, layerHeat, preLayerHeat, preLayerPoint
+      if (this.intervalState) {
+        clearInterval(this.interval)
+      }
+      var layers = this.map.getStyle().layers
+      // 关闭已打开火点图
+      for (var i = 0; i < layers.length; i++) {
+        if (layers[i].id.indexOf('fire') > -1) {
+          this.map.setLayoutProperty(layers[i].id, 'visibility', 'none')
+        }
+      }
+      var Index = this.date.indexOf(this.value)
+      this.intervalState = true
+      this.interval = setInterval(() => {
+        console.log('loop')
+        layerHeat = 'fireMap' + this.date[Index + 1]
+        layerPoint = 'firePoint' + this.date[Index + 1]
+        preLayerHeat = 'fireMap' + this.date[Index]
+        preLayerPoint = 'firePoint' + this.date[Index]
+        this.map.setLayoutProperty(preLayerPoint, 'visibility', 'none')
+        this.map.setLayoutProperty(preLayerHeat, 'visibility', 'none')
+        this.map.setLayoutProperty(layerPoint, 'visibility', 'visible')
+        this.map.setLayoutProperty(layerHeat, 'visibility', 'visible')
+        Index++
+        this.value = this.date[Index]
+        console.log(Index)
+      }, 50)
+    },
+    Pause: function () {
+      // 停止播放
+      var value = this.value
+      clearInterval(this.interval)
+      this.intervalState = false
+      console.log(this.value)
+      this.value = value
+    },
+    OpenAll: function () {
+      //打开所有图层
+      var layers = this.map.getStyle().layers
+      console.log('openall')
+      // 关闭已打开火点图及热力图
+      for (var i = 0; i < layers.length; i++) {
+        if (layers[i].id.indexOf('fire') > -1) {
+          this.map.setLayoutProperty(layers[i].id, 'visibility', 'none')
+        }
+      }
+      // 打开所有火点图
+      for (i = 0; i < layers.length; i++) {
+        if (layers[i].id.indexOf('firePoint') !== -1) {
+          console.log(layers[i].id)
+          this.map.setLayoutProperty(layers[i].id, 'visibility', 'visible')
+        }
+      }
+      this.value = this.date[0]
+    },
   },
 }
 </script>
@@ -456,18 +538,23 @@ export default {
 <style lang="scss" scoped>
 #map {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 97%;
+  top: 3%;
+  left: 0px;
 }
 .mapboxgl-popup {
   max-width: 400px;
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  z-index: 100;
+  color: white;
 }
 .timeline {
   position: absolute;
   bottom: 30px;
   width: 100%;
   left: 100px;
+  z-index: 100;
   .slider {
     width: 80%;
     float: left;
